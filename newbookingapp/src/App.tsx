@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_USER } from './api/queries/userQueries';
+import Header from './components/Header';
 
 const App: React.FC = () => {
   const { loading, error, data } = useQuery(GET_USER); // useQuery is the hook to fecth the data
@@ -12,6 +13,7 @@ const App: React.FC = () => {
 
   return (
     <div>
+      <Header />
       <h1>User Details</h1>
       <p>ID: {user.id}</p>
       <p>Name: {user.name}</p>
